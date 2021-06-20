@@ -1,0 +1,23 @@
+@import "fonts";
+@import "colors";
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	color: $black;
+	background-color: $grey;
+
+	font-family: 'NotoSans', sans-serif;
+	font-weight: normal;
+}
+
+a {
+	text-decoration: none;
+
+	color: inherit;
+}
+
+* {
+	box-sizing: border-box;
+}
