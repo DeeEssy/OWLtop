@@ -1,7 +1,13 @@
-$black: #3B434E;
-$white: #FFF;
-$primary: #7653FC;
-$orange: #FC836D;
-$green: #1DC37E;
-$green-light: #C8F8E4;
-$grey: #F5F6F8;
+:root {
+    --black: #3B434E;
+    --white: #FFF;
+    --primary: #7653FC;
+    --primary-hover: #6344df;
+    --orange: #FC836D;
+    --green: #1DC37E;
+    --green-light: #C8F8E4;
+    --grey: #F5F6F8;
+    --grey-alt: #EBEBEB;
+    --grey-alt2: #B3C0D9;
+    --red: #DE0000;
+}
