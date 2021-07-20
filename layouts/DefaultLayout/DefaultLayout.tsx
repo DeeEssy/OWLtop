@@ -3,6 +3,7 @@ import { Header } from "./Header/Header";
 import { Footer } from "./Footer/Footer";
 import { Sidebar } from "./Sidebar/Sidebar";
 import { FunctionComponent } from "react";
+import { AppContextProvider, IAppContext } from "context/app.context";
 
 const DefaultLayout = ({ children }: DefaultLayoutProps): JSX.Element => {
   return (
@@ -17,14 +18,16 @@ const DefaultLayout = ({ children }: DefaultLayoutProps): JSX.Element => {
   );
 };
 
-export const withLayout = <T extends Record<string, unknown>>(
+export const withLayout = <T extends Record<string, unknown> & IAppContext>(
   Component: FunctionComponent<T>
 ) => {
   return function withLayoutComponent(props: T): JSX.Element {
     return (
-      <DefaultLayout>
-        <Component {...props} />
-      </DefaultLayout>
+      <AppContextProvider menu={props.menu} firstCategory={props.firstCategory}>
+        <DefaultLayout>
+          <Component {...props} />
+        </DefaultLayout>
+      </AppContextProvider>
     );
   };
 };

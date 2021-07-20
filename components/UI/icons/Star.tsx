@@ -1,7 +1,15 @@
-const Star = (props): JSX.Element => {
+import React from "react";
+
+interface StarProps {
+  tabIndex: number;
+  onKeyDown: (en: React.KeyboardEvent<SVGSVGElement>) => void;
+}
+
+const Star = ({ tabIndex, onKeyDown }: StarProps): JSX.Element => {
   return (
     <svg
-      {...props}
+      tabIndex={tabIndex}
+      onKeyDown={onKeyDown}
       width="20"
       height="20"
       viewBox="0 0 20 20"
