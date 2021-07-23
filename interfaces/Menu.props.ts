@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { TopLevelCategory } from "./TopPage.props";
 
-interface PageItem {
+export interface PageItem {
   alias: string;
   title: string;
   _id: string;

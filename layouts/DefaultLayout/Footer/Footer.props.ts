@@ -1,4 +1,4 @@
-import { HTMLAttributes, DetailedHTMLProps } from "react";
+import { DetailedHTMLProps, HTMLAttributes } from "react";
 
-export default interface FooterProps
+export interface FooterProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {}

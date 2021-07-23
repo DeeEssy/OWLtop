@@ -77,9 +77,7 @@ export const Menu = (): JSX.Element => {
     );
   };
   const buildThirdLevel = (pages: PageItem[], route: string) => {
-    return (
-
-    )
+    return <div></div>;
   };
 
   return <div className={styles.menu}>{buildFirstLevel()}</div>;

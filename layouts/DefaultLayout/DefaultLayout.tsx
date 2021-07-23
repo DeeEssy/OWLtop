@@ -3,18 +3,17 @@ import { Header } from "./Header/Header";
 import { Footer } from "./Footer/Footer";
 import { Sidebar } from "./Sidebar/Sidebar";
 import { FunctionComponent } from "react";
+import styles from "./DefaultLayout.module.scss";
 import { AppContextProvider, IAppContext } from "context/app.context";
 
 const DefaultLayout = ({ children }: DefaultLayoutProps): JSX.Element => {
   return (
-    <>
-      <Header />
-      <div>
-        <Sidebar />
-        <div>{children}</div>
-      </div>
-      <Footer />
-    </>
+    <div className={styles.wrapper}>
+      <Header className={styles.header} />
+      <Sidebar className={styles.sidebar} />
+      <main className={styles.body}>{children}</main>
+      <Footer className={styles.footer} />
+    </div>
   );
 };
 
