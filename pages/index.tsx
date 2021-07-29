@@ -4,8 +4,9 @@ import { Htag, Button, Ptag, Tag, Rating } from "@/components/index";
 import { GetStaticProps } from "next";
 import axios from "axios";
 import { MenuItem } from "interfaces/Menu.props";
+import { TypeProps } from "interfaces/TypeProps";
 
-const Home = ({ menu }: HomeProps): JSX.Element => {
+const Home = ({ menu }: TypeProps): JSX.Element => {
   const [counter, setCounter] = useState<number>(0);
 
   const [rating, setRating] = useState(4);
@@ -48,12 +49,7 @@ const Home = ({ menu }: HomeProps): JSX.Element => {
 
 export default withLayout(Home);
 
-interface HomeProps extends Record<string, unknown> {
-  menu: MenuItem[];
-  firstCategory: number;
-}
-
-export const getStaticProps: GetStaticProps<HomeProps> = async () => {
+export const getStaticProps: GetStaticProps<TypeProps> = async () => {
   const firstCategory = 0;
 
   const { data: menu } = await axios.post<MenuItem[]>(
